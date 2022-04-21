@@ -1,0 +1,150 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Hazard",
+"class": "Breach",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Hazards/Breach.gd"
+}, {
+"base": "Node2D",
+"class": "Controller",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Weapons/Controller.gd"
+}, {
+"base": "Controller",
+"class": "ControllerAILaser",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Weapons/ControllerAILaser.gd"
+}, {
+"base": "Controller",
+"class": "ControllerAIProjectile",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Weapons/ControllerAIProjectile.gd"
+}, {
+"base": "Controller",
+"class": "ControllerPlayer",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Weapons/ControllerPlayer.gd"
+}, {
+"base": "ControllerPlayer",
+"class": "ControllerPlayerLaser",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Weapons/ControllerPlayerLaser.gd"
+}, {
+"base": "ControllerPlayer",
+"class": "ControllerPlayerProjectile",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Weapons/ControllerPlayerProjectile.gd"
+}, {
+"base": "Hazard",
+"class": "Fire",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Hazards/Fire.gd"
+}, {
+"base": "Sprite",
+"class": "Hazard",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Hazards/Hazard.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Weapons/Projectile.gd"
+}, {
+"base": "Area2D",
+"class": "Room",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Rooms/Room.gd"
+}, {
+"base": "Path2D",
+"class": "Unit",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Units/Unit.gd"
+}, {
+"base": "Reference",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Utils.gd"
+}, {
+"base": "Sprite",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Weapons/Weapon.gd"
+} ]
+_global_script_class_icons={
+"Breach": "",
+"Controller": "",
+"ControllerAILaser": "",
+"ControllerAIProjectile": "",
+"ControllerPlayer": "",
+"ControllerPlayerLaser": "",
+"ControllerPlayerProjectile": "",
+"Fire": "",
+"Hazard": "",
+"Projectile": "",
+"Room": "",
+"Unit": "",
+"Utils": "",
+"Weapon": ""
+}
+
+[application]
+
+config/name="2D Tactical Space Combat"
+run/main_scene="res://TacticalSpaceCombat.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray(  )
+
+[input]
+
+left_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+right_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="Ships"
+2d_physics/layer_2="ShipPlayer"
+2d_physics/layer_3="ShipAI"
+2d_physics/layer_20="UI"
+
+[physics]
+
+2d/default_gravity=0
+2d/default_linear_damp=0.0
+2d/default_angular_damp=0.0
+
+[rendering]
+
+environment/default_clear_color=Color( 0.152941, 0.152941, 0.211765, 1 )
+environment/default_environment="res://default_env.tres"
